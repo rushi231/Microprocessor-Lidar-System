@@ -68,7 +68,6 @@ Stepper Motor, Time of Flight Sensor
 
 
 
-
 <!-- GETTING STARTED -->
 ## Getting Started
 
@@ -79,7 +78,6 @@ Designed and constructed an embedded spatial measurement system using a time-of-
 This is an example of how to list things you need to use the software and how to install them.
 
   ```
-
 
 
 
