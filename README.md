@@ -81,36 +81,15 @@ This section should list any major frameworks/libraries used to bootstrap your p
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+Designed and constructed an embedded spatial measurement system using a time-of-flight sensor to gather information about the surrounding environment. The system includes a rotary mechanism that allows for a 360-degree measurement of distance within a single vertical geometric plane (e.g. y-z). The collected data is stored in onboard memory and later transmitted to a personal computer or web application for visualization and analysis.
 
-### Prerequisites
-
+### Description
+ The microcontroller serves as a bridge between the time-of-flight sensor and the computer. The sensor is mounted on a stepper motor that rotates in both clockwise and counterclockwise directions to obtain spatial distance measurements in the y-z plane. It completes three full rotations, each representing a 360-degree surface that will later be visualized on a personal computer. The sensor uses a photon emitter to emit light and measures the time it takes for the light to bounce back after hitting a surface. The sensor includes all necessary analog-to-digital conversion such as transduction, signal conditioning and analog-to-digital conversion. The microcontroller communicates with the sensor using I2C protocol to get distance measurements and then communicates with the personal computer using UART. The data is then visualized using Python, specifically Pyserial to read data from UART and Open3D to create a 3D representation of the environment
 This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
+
   ```
 
-### Installation
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
-
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/your_username_/Project-Name.git
-   ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
