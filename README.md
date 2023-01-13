@@ -32,9 +32,9 @@ Stepper Motor, Time of Flight Sensor
 
 
 <!-- USAGE EXAMPLES -->
-## Usage
+Code
 
--Some code Snippets 
+These are screenshots of some of the code uesed
 	
 	
 	void PortM_Init(void){      //USED FOR OFF BUTTON(PM0)
@@ -42,10 +42,10 @@ Stepper Motor, Time of Flight Sensor
 	SYSCTL_RCGCGPIO_R |= SYSCTL_RCGCGPIO_R11;				// activate clock for Port M
 	while((SYSCTL_PRGPIO_R&SYSCTL_PRGPIO_R11) == 0){};	// allow time for clock to stabilize
 	GPIO_PORTM_DIR_R |= 0x00	;        								// making PM0 an input  
-  GPIO_PORTM_AFSEL_R &= ~0xFF;     								// disable alt funct on PN0
-  GPIO_PORTM_DEN_R |= 0xFF;        								// enable digital I/O on PN0
+  	GPIO_PORTM_AFSEL_R &= ~0xFF;     								// disable alt funct on PN0
+        GPIO_PORTM_DEN_R |= 0xFF;        								// enable digital I/O on PN0
 																									
-  GPIO_PORTM_AMSEL_R &= ~0xFF;     								// disable analog functionality on PN0		
+        GPIO_PORTM_AMSEL_R &= ~0xFF;     								// disable analog functionality on PN0		
 	return;
 }
 	
@@ -71,6 +71,7 @@ Stepper Motor, Time of Flight Sensor
           break;
         }else{
         }
+	
 	while (dataReady == 0){
 		status = VL53L1X_CheckForDataReady(dev, &dataReady);
 		FlashLED1(1);
