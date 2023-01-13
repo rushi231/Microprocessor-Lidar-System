@@ -34,10 +34,24 @@ Stepper Motor, Time of Flight Sensor
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.//status = VL53L1_RdByte(dev, 0x010F, &id); //for model ID (0xEA)
-	//status = VL53L1_RdByte(dev, 0x0110, &type); //for module type (0xCC)
-	//status = VL53L1_RdWord(dev, 0x010F, &both); //for both model ID and type
-	//sprintf(printf_buffer,"%x, %x, %x\r\n",id, type, both);
+-Some code Snippets 
+	
+	
+	void PortM_Init(void){      //USED FOR OFF BUTTON(PM0)
+	//Use PortM pins for output
+	SYSCTL_RCGCGPIO_R |= SYSCTL_RCGCGPIO_R11;				// activate clock for Port M
+	while((SYSCTL_PRGPIO_R&SYSCTL_PRGPIO_R11) == 0){};	// allow time for clock to stabilize
+	GPIO_PORTM_DIR_R |= 0x00	;        								// making PM0 an input  
+  GPIO_PORTM_AFSEL_R &= ~0xFF;     								// disable alt funct on PN0
+  GPIO_PORTM_DEN_R |= 0xFF;        								// enable digital I/O on PN0
+																									
+  GPIO_PORTM_AMSEL_R &= ~0xFF;     								// disable analog functionality on PN0		
+	return;
+}
+	
+	
+	
+	
 	// keep track of how many scans have been done 
 	int count = 0;
 	// get 3 measurments
@@ -57,16 +71,12 @@ Use this space to show useful examples of how a project can be used. Additional 
           break;
         }else{
         }
-			//wait until the ToF sensor's data is ready
-			while (dataReady == 0){
-				status = VL53L1X_CheckForDataReady(dev, &dataReady);
-				FlashLED1(1);
-						VL53L1_WaitMs(dev, 5);
-			}
+	while (dataReady == 0){
+		status = VL53L1X_CheckForDataReady(dev, &dataReady);
+		FlashLED1(1);
+		L53L1_WaitMs(dev, 5);
+	}
 
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
