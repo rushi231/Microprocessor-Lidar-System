@@ -26,12 +26,7 @@ SimpleLink MSP432E401Y Microcontroller
 Stepper Motor, Time of Flight Sensor
 
 Images
-![alt text](https://github.com/rushi231/CoffeeRoasters/blob/main/coffeeroasters-subscription-site/Screenshot%20CoffeeRoaster.png)
-![alt text](https://github.com/rushi231/CoffeeRoasters/blob/main/coffeeroasters-subscription-site/Screenshot%20CoffeeRoaster.png)
-
-
-  ```
-
+![alt text](https://github.com/rushi231/Microprocessor-Lidar-System/blob/main/Output.png)
 
 
 
