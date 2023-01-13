@@ -25,6 +25,10 @@ C: Extracting Distance Measurements, I2C Communication, UART Communication
 SimpleLink MSP432E401Y Microcontroller
 Stepper Motor, Time of Flight Sensor
 
+Images
+![alt text](https://github.com/rushi231/CoffeeRoasters/blob/main/coffeeroasters-subscription-site/Screenshot%20CoffeeRoaster.png)
+![alt text](https://github.com/rushi231/CoffeeRoasters/blob/main/coffeeroasters-subscription-site/Screenshot%20CoffeeRoaster.png)
+
 
   ```
 
