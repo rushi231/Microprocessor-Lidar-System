@@ -25,7 +25,8 @@ C: Extracting Distance Measurements, I2C Communication, UART Communication
 SimpleLink MSP432E401Y Microcontroller
 Stepper Motor, Time of Flight Sensor
 
-Images
+### Images
+
 ![alt text](https://github.com/rushi231/Microprocessor-Lidar-System/blob/main/Output.png)
 
 
@@ -33,7 +34,35 @@ Images
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.//status = VL53L1_RdByte(dev, 0x010F, &id); //for model ID (0xEA)
+	//status = VL53L1_RdByte(dev, 0x0110, &type); //for module type (0xCC)
+	//status = VL53L1_RdWord(dev, 0x010F, &both); //for both model ID and type
+	//sprintf(printf_buffer,"%x, %x, %x\r\n",id, type, both);
+	// keep track of how many scans have been done 
+	int count = 0;
+	// get 3 measurments
+	while(count < 3)
+	{
+		// this is for the button press. Active LO is being used
+		if(GPIO_PORTJ_DATA_R == 0b00000000)
+		{
+			count++;
+			// get 8 measurments for 360 degrees we have 
+			for(int i = 0; i < 8; i++) {
+			
+				//  used to detect stop button 
+        if((GPIO_PORTM_DATA_R&0b00000001)==0){
+          //  break out of code random place holder value
+          count = 5;
+          break;
+        }else{
+        }
+			//wait until the ToF sensor's data is ready
+			while (dataReady == 0){
+				status = VL53L1X_CheckForDataReady(dev, &dataReady);
+				FlashLED1(1);
+						VL53L1_WaitMs(dev, 5);
+			}
 
 _For more examples, please refer to the [Documentation](https://example.com)_
 
